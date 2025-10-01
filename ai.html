@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>AI Chat — DropHub</title>
+  <style>
+    body {font-family:Arial,sans-serif;margin:0;background:#f6f8fb;}
+    main {max-width:1100px;margin:32px auto;padding:10px;}
+    .frame-wrap {display:flex;flex-direction:column;gap:28px;align-items:center;}
+    iframe {width:850px;height:520px;border:1px solid #dfe6f2;border-radius:8px;}
+    h2 {color:#0a59a6;text-align:center;}
+    p.note {text-align:center;color:#666;font-size:14px;}
+  </style>
+</head>
+<body>
+  <script type="module" src="navbar.js"></script>
+
+  <main>
+    <h2>AI Chat Hub</h2>
+    <p class="note">These are external demo AI apps embedded via iframes. Some sites block embedding with X-Frame-Options — if a frame is blank/blocked, open the link in a new tab instead.</p>
+
+    <div class="frame-wrap">
+      <!-- Replace / add/remove frames as you like. -->
+      <iframe src="https://openbmb-minicpm4-1-8b-demo.hf.space/" title="OpenBMB Mini"></iframe>
+
+      <iframe src="https://gimbx-uncensored-hackercoding-gpt.hf.space" title="GIMBX Uncensored"></iframe>
+
+      <iframe src="https://dsduded-ai-fire-dot.hf.space/" title="DSDuded AI"></iframe>
+
+      <iframe src="https://qwen-qwen3-vl-235b-a22b-instruct-demo.hf.space/" title="Qwen Demo"></iframe>
+
+      <iframe src="https://lunarbs-darkgpt-api.hf.space" title="LunarBS DarkGPT"></iframe>
+    </div>
+  </main>
+</body>
+</html>
