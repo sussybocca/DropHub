@@ -7,9 +7,10 @@
   <style>
     body {font-family:Arial,sans-serif;margin:0;background:#f6f8fb;}
     main {max-width:1100px;margin:32px auto;padding:10px;}
-    .frame-wrap {display:flex;flex-direction:column;gap:28px;align-items:center;}
-    iframe {width:850px;height:520px;border:1px solid #dfe6f2;border-radius:8px;}
     h2 {color:#0a59a6;text-align:center;}
+    .dropdown {margin:20px 0;text-align:center;}
+    select {padding:8px 12px;font-size:14px;border-radius:6px;border:1px solid #ccc;}
+    iframe {width:850px;height:520px;border:1px solid #dfe6f2;border-radius:8px;display:block;margin:0 auto;}
     p.note {text-align:center;color:#666;font-size:14px;}
   </style>
 </head>
@@ -18,20 +19,29 @@
 
   <main>
     <h2>AI Chat Hub</h2>
-    <p class="note">These are external demo AI apps embedded via iframes. Some sites block embedding with X-Frame-Options — if a frame is blank/blocked, open the link in a new tab instead.</p>
+    <p class="note">Select an AI model to load below. Some iframes may be blocked by external sites.</p>
 
-    <div class="frame-wrap">
-      <!-- Replace / add/remove frames as you like. -->
-      <iframe src="https://openbmb-minicpm4-1-8b-demo.hf.space/" title="OpenBMB Mini"></iframe>
-
-      <iframe src="https://gimbx-uncensored-hackercoding-gpt.hf.space" title="GIMBX Uncensored"></iframe>
-
-      <iframe src="https://dsduded-ai-fire-dot.hf.space/" title="DSDuded AI"></iframe>
-
-      <iframe src="https://qwen-qwen3-vl-235b-a22b-instruct-demo.hf.space/" title="Qwen Demo"></iframe>
-
-      <iframe src="https://lunarbs-darkgpt-api.hf.space" title="LunarBS DarkGPT"></iframe>
+    <div class="dropdown">
+      <label for="ai-model">Choose AI Model:</label>
+      <select id="ai-model">
+        <option value="https://openbmb-minicpm4-1-8b-demo.hf.space/">OpenBMB Mini</option>
+        <option value="https://gimbx-uncensored-hackercoding-gpt.hf.space">GIMBX Uncensored</option>
+        <option value="https://dsduded-ai-fire-dot.hf.space/">DSDuded AI</option>
+        <option value="https://qwen-qwen3-vl-235b-a22b-instruct-demo.hf.space/">Qwen Demo</option>
+        <option value="https://lunarbs-darkgpt-api.hf.space">LunarBS DarkGPT</option>
+      </select>
     </div>
+
+    <iframe id="ai-frame" src="https://openbmb-minicpm4-1-8b-demo.hf.space/" title="AI Model"></iframe>
   </main>
+
+  <script>
+    const select = document.getElementById("ai-model");
+    const frame = document.getElementById("ai-frame");
+
+    select.addEventListener("change", () => {
+      frame.src = select.value;
+    });
+  </script>
 </body>
 </html>

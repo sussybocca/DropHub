@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Linked Sites — DropHub</title>
+  <style>
+    body {font-family:Arial,sans-serif;margin:0;background:#f6f8fb;}
+    main {max-width:1100px;margin:32px auto;padding:10px;}
+    h2 {color:#0a59a6;text-align:center;}
+    .dropdown {margin:20px 0;text-align:center;}
+    select {padding:8px 12px;font-size:14px;border-radius:6px;border:1px solid #ccc;}
+    iframe {width:850px;height:520px;border:1px solid #dfe6f2;border-radius:8px;display:block;margin:0 auto;}
+    p.note {text-align:center;color:#666;font-size:14px;}
+  </style>
+</head>
+<body>
+  <script type="module" src="navbar.js"></script>
+
+  <main>
+    <h2>Linked Sites</h2>
+    <p class="note">Select a site from the dropdown to view it below. Some sites may block embedding.</p>
+
+    <div class="dropdown">
+      <label for="linked-site">Choose a site:</label>
+      <select id="linked-site">
+        <option value="https://aihubd.netlify.app/">AI Hub D</option>
+        <option value="https://yodudedhg.netlify.app/">YoDude DHG</option>
+        <option value="https://dudess.netlify.app/">Dudess</option>
+        <option value="https://sussybocca.netlify.app/">Sussy Bocca</option>
+        <option value="https://fire-box.netlify.app/">Fire Box</option>
+        <option value="https://gggdaa.netlify.app/">GGGDAA</option>
+        <option value="https://yodudeda.netlify.app/">YoDude DA</option>
+      </select>
+    </div>
+
+    <iframe id="linked-frame" src="https://aihubd.netlify.app/" title="Linked Site"></iframe>
+  </main>
+
+  <script>
+    const select = document.getElementById("linked-site");
+    const frame = document.getElementById("linked-frame");
+
+    select.addEventListener("change", () => {
+      frame.src = select.value;
+    });
+  </script>
+</body>
+</html>
